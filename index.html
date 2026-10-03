@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniDash | Student Academic Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= BACKGROUND ================= -->
+    <div class="background">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="grid"></div>
+    </div>
+
+    <!-- ================= AUTH ================= -->
+    <section id="authPage" class="auth-page">
+
+        <div class="auth-brand">
+            <div class="brand-cube">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h1>Uni<span>Dash</span></h1>
+            <p>Student Academic Intelligence Platform</p>
+        </div>
+
+        <div class="auth-card">
+
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-form="login">Login</button>
+                <button class="auth-tab" data-form="signup">Create Account</button>
+            </div>
+
+            <!-- LOGIN -->
+            <form id="loginForm" class="auth-form active">
+
+                <div class="form-heading">
+                    <h2>Welcome back</h2>
+                    <p>Continue your academic journey.</p>
+                </div>
+
+                <div class="input-group">
+                    <label>Email</label>
+                    <div class="input-wrapper">
+                        <span>✉</span>
+                        <input type="email" id="loginEmail" placeholder="you@example.com" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <div class="input-wrapper">
+                        <span>⌑</span>
+                        <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                        <button type="button" class="password-toggle" data-target="loginPassword">◉</button>
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span>Remember me</span>
+                    </label>
+
+                    <a href="#">Forgot password?</a>
+                </div>
+
+                <button class="primary-btn" type="submit">
+                    <span>Sign in</span>
+                    <span>→</span>
+                </button>
+
+                <div class="divider">
+                    <span>or</span>
+                </div>
+
+                <button type="button" class="demo-btn" id="demoLogin">
+                    Continue with Demo Account
+                </button>
+
+            </form>
+
+            <!-- SIGNUP -->
+            <form id="signupForm" class="auth-form">
+
+                <div class="form-heading">
+                    <h2>Create your account</h2>
+                    <p>Build your personalized academic workspace.</p>
+                </div>
+
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <div class="input-wrapper">
+                        <span>♙</span>
+                        <input type="text" id="signupName" placeholder="Your full name" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Email</label>
+                    <div class="input-wrapper">
+                        <span>✉</span>
+                        <input type="email" id="signupEmail" placeholder="you@example.com" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <div class="input-wrapper">
+                        <span>⌑</span>
+                        <input type="password" id="signupPassword" placeholder="Minimum 6 characters" required>
+                        <button type="button" class="password-toggle" data-target="signupPassword">◉</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>University</label>
+                    <div class="input-wrapper">
+                        <span>⌂</span>
+                        <input type="text" id="signupUniversity" placeholder="Your university" required>
+                    </div>
+                </div>
+
+                <label class="checkbox terms">
+                    <input type="checkbox" required>
+                    <span>I agree to the terms and privacy policy.</span>
+                </label>
+
+                <button class="primary-btn" type="submit">
+                    <span>Create account</span>
+                    <span>→</span>
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="auth-footer">
+            © 2026 UniDash · Built for students
+        </div>
+
+    </section>
+
+
+    <!-- ================= APP ================= -->
+    <section id="app" class="app hidden">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <div class="mini-cube">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div>
+                    <strong>Uni<span>Dash</span></strong>
+                    <small>ACADEMIC OS</small>
+                </div>
+            </div>
+
+            <nav>
+
+                <p class="nav-label">MAIN</p>
+
+                <button class="nav-item active" data-page="dashboard">
+                    <span>⌂</span>
+                    Dashboard
+                </button>
+
+                <button class="nav-item" data-page="subjects">
+                    <span>▦</span>
+                    Subjects
+                </button>
+
+                <button class="nav-item" data-page="assignments">
+                    <span>✓</span>
+                    Assignments
+                </button>
+
+                <button class="nav-item" data-page="exams">
+                    <span>◷</span>
+                    Exams
+                </button>
+
+                <p class="nav-label">TOOLS</p>
+
+                <button class="nav-item" data-page="notes">
+                    <span>▤</span>
+                    Study Notes
+                </button>
+
+                <button class="nav-item" data-page="analytics">
+                    <span>⌁</span>
+                    Analytics
+                </button>
+
+                <button class="nav-item" data-page="calendar">
+                    <span>▦</span>
+                    Calendar
+                </button>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <button class="nav-item" id="themeToggle">
+                    <span>◐</span>
+                    Appearance
+                </button>
+
+                <div class="user-mini">
+                    <div class="avatar" id="sidebarAvatar">U</div>
+
+                    <div class="user-info">
+                        <strong id="sidebarName">Student</strong>
+                        <small id="sidebarUniversity">University</small>
+                    </div>
+
+                    <button id="logoutBtn" title="Logout">↪</button>
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <button class="mobile-menu" id="mobileMenu">☰</button>
+
+                <div class="page-title">
+                    <h2 id="pageTitle">Dashboard</h2>
+                    <p id="currentDate"></p>
+                </div>
+
+                <div class="top-actions">
+
+                    <div class="search">
+                        <span>⌕</span>
+                        <input type="text" placeholder="Search anything...">
+                        <kbd>⌘ K</kbd>
+                    </div>
+
+                    <button class="icon-btn notification-btn">
+                        ♧
+                        <span></span>
+                    </button>
+
+                    <div class="top-avatar" id="topAvatar">U</div>
+
+                </div>
+
+            </header>
+
+
+            <!-- CONTENT -->
+            <div class="content">
+
+                <!-- DASHBOARD -->
+                <div class="page active" id="dashboard">
+
+                    <section class="welcome">
+
+                        <div>
+                            <span class="eyebrow">YOUR ACADEMIC COMMAND CENTER</span>
+
+                            <h1>
+                                Good morning,
+                                <span id="welcomeName">Student</span> 👋
+                            </h1>
+
+                            <p>
+                                Stay focused, track your progress, and keep moving forward.
+                            </p>
+                        </div>
+
+                        <button class="primary-btn small" id="quickAdd">
+                            + Add Record
+                        </button>
+
+                    </section>
+
+
+                    <!-- STAT CARDS -->
+                    <section class="stats-grid">
+
+                        <div class="stat-card blue">
+                            <div class="stat-icon">◈</div>
+                            <div>
+                                <span>Current GPA</span>
+                                <strong id="gpaValue">3.72</strong>
+                                <small>↑ 0.18 this semester</small>
+                            </div>
+                        </div>
+
+                        <div class="stat-card purple">
+                            <div class="stat-icon">▣</div>
+                            <div>
+                                <span>Attendance</span>
+                                <strong id="attendanceValue">92%</strong>
+                                <small>↑ 3% from last month</small>
+                            </div>
+                        </div>
+
+                        <div class="stat-card green">
+                            <div class="stat-icon">✓</div>
+                            <div>
+                                <span>Assignments</span>
+                                <strong id="assignmentValue">18</strong>
+                                <small>12 completed</small>
+                            </div>
+                        </div>
+
+                        <div class="stat-card orange">
+                            <div class="stat-icon">◷</div>
+                            <div>
+                                <span>Study Hours</span>
+                                <strong>24.5h</strong>
+                                <small>↑ 12% this week</small>
+                            </div>
+                        </div>
+
+                    </section>
+
+
+                    <!-- DASHBOARD GRID -->
+                    <section class="dashboard-grid">
+
+                        <!-- PROGRESS -->
+                        <div class="panel progress-panel">
+
+                            <div class="panel-header">
+                                <div>
+                                    <span class="panel-kicker">SEMESTER</span>
+                                    <h3>Academic Progress</h3>
+                                </div>
+
+                                <button class="more-btn">•••</button>
+                            </div>
+
+                            <div class="progress-main">
+
+                                <div class="progress-ring">
+                                    <svg viewBox="0 0 120 120">
+                                        <circle class="ring-bg" cx="60" cy="60" r="48"></circle>
+                                        <circle class="ring-value" cx="60" cy="60" r="48"></circle>
+                                    </svg>
+
+                                    <div>
+                                        <strong>68%</strong>
+                                        <span>Complete</span>
+                                    </div>
+                                </div>
+
+                                <div class="progress-info">
+
+                                    <div>
+                                        <span>Semester</span>
+                                        <strong>1 of 6</strong>
+                                    </div>
+
+                                    <div>
+                                        <span>Credits</span>
+                                        <strong>24 / 30</strong>
+                                    </div>
+
+                                    <div>
+                                        <span>Days left</span>
+                                        <strong>74</strong>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- UPCOMING -->
+                        <div class="panel">
+
+                            <div class="panel-header">
+                                <div>
+                                    <span class="panel-kicker">UPCOMING</span>
+                                    <h3>Next deadlines</h3>
+                                </div>
+
+                                <button class="text-btn" data-page-target="assignments">
+                                    View all →
+                                </button>
+                            </div>
+
+                            <div id="upcomingList" class="task-list"></div>
+
+                        </div>
+
+
+                        <!-- SUBJECTS -->
+                        <div class="panel subjects-panel">
+
+                            <div class="panel-header">
+
+                                <div>
+                                    <span class="panel-kicker">PERFORMANCE</span>
+                                    <h3>My Subjects</h3>
+                                </div>
+
+                                <button class="text-btn" data-page-target="subjects">
+                                    Manage →
+                                </button>
+
+                            </div>
+
+                            <div class="subject-list">
+
+                                <div class="subject">
+                                    <div class="subject-icon">CS</div>
+
+                                    <div class="subject-details">
+                                        <strong>Programming</strong>
+                                        <span>Computer Science</span>
+                                    </div>
+
+                                    <div class="subject-grade">
+                                        <strong>92%</strong>
+                                        <div class="mini-progress">
+                                            <span style="width:92%"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="subject">
+                                    <div class="subject-icon purple-icon">MA</div>
+
+                                    <div class="subject-details">
+                                        <strong>Mathematics</strong>
+                                        <span>Core Mathematics</span>
+                                    </div>
+
+                                    <div class="subject-grade">
+                                        <strong>87%</strong>
+                                        <div class="mini-progress">
+                                            <span style="width:87%"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="subject">
+                                    <div class="subject-icon green-icon">DS</div>
+
+                                    <div class="subject-details">
+                                        <strong>Data Structures</strong>
+                                        <span>Computer Science</span>
+                                    </div>
+
+                                    <div class="subject-grade">
+                                        <strong>90%</strong>
+                                        <div class="mini-progress">
+                                            <span style="width:90%"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ACTIVITY -->
+                        <div class="panel">
+
+                            <div class="panel-header">
+                                <div>
+                                    <span class="panel-kicker">ACTIVITY</span>
+                                    <h3>Recent Activity</h3>
+                                </div>
+                            </div>
+
+                            <div class="activity-list">
+
+                                <div class="activity">
+                                    <div class="activity-dot green-dot"></div>
+                                    <div>
+                                        <strong>Assignment completed</strong>
+                                        <span>Programming · 2 hours ago</span>
+                                    </div>
+                                </div>
+
+                                <div class="activity">
+                                    <div class="activity-dot blue-dot"></div>
+                                    <div>
+                                        <strong>Exam added</strong>
+                                        <span>Mathematics · Yesterday</span>
+                                    </div>
+                                </div>
+
+                                <div class="activity">
+                                    <div class="activity-dot purple-dot"></div>
+                                    <div>
+                                        <strong>Study note created</strong>
+                                        <span>Data Structures · 2 days ago</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+                <!-- SUBJECTS -->
+                <div class="page" id="subjects">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="eyebrow">ACADEMIC STRUCTURE</span>
+                            <h1>Subjects</h1>
+                            <p>Manage your courses and academic performance.</p>
+                        </div>
+
+                        <button class="primary-btn small" id="addSubjectBtn">
+                            + Add Subject
+                        </button>
+
+                    </div>
+
+                    <div class="cards-grid" id="subjectsGrid"></div>
+
+                </div>
+
+
+                <!-- ASSIGNMENTS -->
+                <div class="page" id="assignments">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="eyebrow">TASK MANAGEMENT</span>
+                            <h1>Assignments</h1>
+                            <p>Track every academic task and deadline.</p>
+                        </div>
+
+                        <button class="primary-btn small" id="addAssignmentBtn">
+                            + Add Assignment
+                        </button>
+
+                    </div>
+
+                    <div class="filter-bar">
+                        <button class="filter active">All</button>
+                        <button class="filter">Pending</button>
+                        <button class="filter">Completed</button>
+                        <button class="filter">Overdue</button>
+                    </div>
+
+                    <div class="table-card">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Assignment</th>
+                                    <th>Subject</th>
+                                    <th>Deadline</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="assignmentTable"></tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EXAMS -->
+                <div class="page" id="exams">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="eyebrow">EXAM CENTER</span>
+                            <h1>Exams</h1>
+                            <p>Keep your examination schedule under control.</p>
+                        </div>
+
+                        <button class="primary-btn small" id="addExamBtn">
+                            + Add Exam
+                        </button>
+
+                    </div>
+
+                    <div class="exam-grid" id="examGrid"></div>
+
+                </div>
+
+
+                <!-- NOTES -->
+                <div class="page" id="notes">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="eyebrow">KNOWLEDGE BASE</span>
+                            <h1>Study Notes</h1>
+                            <p>Your personal academic knowledge library.</p>
+                        </div>
+
+                        <button class="primary-btn small" id="addNoteBtn">
+                            + New Note
+                        </button>
+
+                    </div>
+
+                    <div class="notes-grid" id="notesGrid"></div>
+
+                </div>
+
+
+                <!-- ANALYTICS -->
+                <div class="page" id="analytics">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="eyebrow">DATA INTELLIGENCE</span>
+                            <h1>Analytics</h1>
+                            <p>Understand your academic performance.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="analytics-grid">
+
+                        <div class="panel large-chart">
+
+                            <div class="panel-header">
+                                <div>
+                                    <span class="panel-kicker">PERFORMANCE</span>
+                                    <h3>Academic Performance</h3>
+                                </div>
+
+                                <select>
+                                    <option>Last 6 months</option>
+                                    <option>This semester</option>
+                                </select>
+                            </div>
+
+                            <div class="fake-chart">
+
+                                <div class="chart-bars">
+                                    <span style="height:40%"></span>
+                                    <span style="height:55%"></span>
+                                    <span style="height:48%"></span>
+                                    <span style="height:70%"></span>
+                                    <span style="height:63%"></span>
+                                    <span style="height:82%"></span>
+                                    <span style="height:76%"></span>
+                                    <span style="height:91%"></span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel">
+
+                            <div class="panel-header">
+                                <div>
+                                    <span class="panel-kicker">SUMMARY</span>
+                                    <h3>Statistics</h3>
+                                </div>
+                            </div>
+
+                            <div class="analytics-stats">
+
+                                <div>
+                                    <span>Highest Grade</span>
+                                    <strong>94%</strong>
+                                </div>
+
+                                <div>
+                                    <span>Completed Tasks</span>
+                                    <strong>82%</strong>
+                                </div>
+
+                                <div>
+                                    <span>Study Streak</span>
+                                    <strong>12 days</strong>
+                                </div>
+
+                                <div>
+                                    <span>Average Study</span>
+                                    <strong>3.5h/day</strong>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CALENDAR -->
+                <div class="page" id="calendar">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="eyebrow">SCHEDULE</span>
+                            <h1>Calendar</h1>
+                            <p>Your academic timeline at a glance.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="calendar-card">
+
+                        <div class="calendar-header">
+                            <button>←</button>
+                            <h2>September 2026</h2>
+                            <button>→</button>
+                        </div>
+
+                        <div class="calendar-week">
+                            <span>MON</span>
+                            <span>TUE</span>
+                            <span>WED</span>
+                            <span>THU</span>
+                            <span>FRI</span>
+                            <span>SAT</span>
+                            <span>SUN</span>
+                        </div>
+
+                        <div class="calendar-days">
+
+                            <span class="muted">31</span>
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                            <span>4</span>
+                            <span>5</span>
+                            <span>6</span>
+
+                            <span>7</span>
+                            <span>8</span>
+                            <span>9</span>
+                            <span>10</span>
+                            <span>11</span>
+                            <span>12</span>
+                            <span>13</span>
+
+                            <span>14</span>
+                            <span>15</span>
+                            <span>16</span>
+                            <span>17</span>
+                            <span>18</span>
+                            <span>19</span>
+                            <span>20</span>
+
+                            <span>21</span>
+                            <span>22</span>
+                            <span>23</span>
+                            <span>24</span>
+                            <span class="today">25</span>
+                            <span>26</span>
+                            <span>27</span>
+
+                            <span>28</span>
+                            <span>29</span>
+                            <span>30</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </section>
+
+
+    <!-- ================= MODAL ================= -->
+
+    <div class="modal-overlay" id="modal">
+
+        <div class="modal">
+
+            <button class="modal-close" id="modalClose">×</button>
+
+            <div class="modal-header">
+                <span class="eyebrow">NEW RECORD</span>
+                <h2 id="modalTitle">Add Record</h2>
+                <p id="modalDescription">Add information to your academic dashboard.</p>
+            </div>
+
+            <form id="modalForm"></form>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+    <div id="toast" class="toast">
+        <span>✓</span>
+        <p>Success</p>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
